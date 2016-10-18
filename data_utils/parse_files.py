@@ -1,5 +1,6 @@
 from config import nn_config
 from pipes import quote
+import librosa
 import numpy as np
 import os
 import scipy.io.wavfile as wav
@@ -64,10 +65,8 @@ def convert_folder_to_wav(directory, sample_rate=44100):
 MAX_INT_16 = 32767.0
 
 def read_wav_as_np(filename):
-  data = wav.read(filename)
-  np_arr = data[1].astype('float32') / MAX_INT_16 # Normalize 16-bit input to [-1, 1] range
-  # np_arr = np.array(np_arr)
-  return np_arr, data[0]
+  '''Deprecated. Use librosa directly'''
+  return librosa.load(filename, sr=None)
 
 def write_np_as_wav(X, sample_rate, filename):
   Xnew = X * MAX_INT_16

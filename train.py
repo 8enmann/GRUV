@@ -11,10 +11,8 @@ import os
 def main(model_name, num_files):
   config = nn_config.get_neural_net_configuration()
   inputFile = config['model_file']
-  cur_iter = 0
 
-
-  #Load up the training data
+  # Load up the training data
   print ('Loading training data')
   #X_train is a tensor of size (num_train_examples, num_timesteps, num_frequency_dims)
   #y_train is a tensor of size (num_train_examples, num_timesteps, num_frequency_dims)
