@@ -39,10 +39,6 @@ def main(model_name, num_files):
 
   model.summary()
   
-  # Number of training examples pushed to the GPU per batch.
-  #Larger batch sizes require more memory, but training will be faster
-  batch_size = 8
-
   time_str = time.strftime('%Y%m%d-%H%M')
 
   checkpointer = ModelCheckpoint(filepath='./models/weights_%s' % time_str,
@@ -52,13 +48,16 @@ def main(model_name, num_files):
                                      write_graph=True)
   history = model.fit(
     X_train, y_train,
-    batch_size=batch_size,
-    nb_epoch=1000,
+    # Number of training examples pushed to the GPU per batch.
+    # Larger batch sizes require more memory, but training will be faster
+    batch_size=16,
+    nb_epoch=500,
     verbose=1,
     callbacks=[checkpointer, tensorboard_reporter, ],
     validation_split=0.05)
 
   print ('Training complete!')
+  model.save_weights('./models/weights_%s_final' % time_str)
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--numfiles', default=20)
