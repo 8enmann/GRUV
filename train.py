@@ -36,14 +36,15 @@ def main(model_name, num_files):
     # TODO: verify that loaded model is compatible with new model shape
     print ('Loaded parameters from', model_name)
 
+  time_str = time.strftime('%Y%m%d-%H%M')
+  with open('./models/%s.json' % time_str, 'w') as f:
+    f.write(model.to_json())
 
   model.summary()
-  
-  time_str = time.strftime('%Y%m%d-%H%M')
 
-  checkpointer = ModelCheckpoint(filepath='./models/weights_%s' % time_str,
+  checkpointer = ModelCheckpoint(filepath='./models/%s.hdf5' % time_str,
                                  verbose=1, save_best_only=True)
-  tensorboard_reporter = TensorBoard(log_dir='./tensorboard/log_%s' % time_str,
+  tensorboard_reporter = TensorBoard(log_dir='./tensorboard/%s' % time_str,
                                      histogram_freq=20,
                                      write_graph=True)
   history = model.fit(
@@ -57,7 +58,7 @@ def main(model_name, num_files):
     validation_split=0.05)
 
   print ('Training complete!')
-  model.save_weights('./models/weights_%s_final' % time_str)
+  model.save_weights('./models/weights_%s_final.hdf5' % time_str)
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--numfiles', default=20)

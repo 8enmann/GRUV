@@ -1,0 +1,82 @@
+name: ml
+channels: !!python/tuple
+- !!python/unicode 'defaults'
+dependencies:
+- backports=1.0=py27_0
+- decorator=4.0.10=py27_0
+- enum34=1.1.6=py27_0
+- get_terminal_size=1.0.0=py27_0
+- ipython=5.1.0=py27_0
+- ipython_genutils=0.1.0=py27_0
+- openssl=1.0.2j=0
+- path.py=8.2.1=py27_0
+- pathlib2=2.1.0=py27_0
+- pexpect=4.0.1=py27_0
+- pickleshare=0.7.4=py27_0
+- pip=8.1.2=py27_0
+- prompt_toolkit=1.0.3=py27_0
+- ptyprocess=0.5.1=py27_0
+- pygments=2.1.3=py27_0
+- python=2.7.12=1
+- readline=6.2=2
+- setuptools=27.2.0=py27_0
+- simplegeneric=0.8.1=py27_1
+- six=1.10.0=py27_0
+- sqlite=3.13.0=0
+- tk=8.5.18=0
+- traitlets=4.3.1=py27_0
+- wcwidth=0.1.7=py27_0
+- wheel=0.29.0=py27_0
+- zlib=1.2.8=3
+- pip:
+  - audioread==2.1.4
+  - backports-abc==0.4
+  - backports.shutil-get-terminal-size==1.0.0
+  - certifi==2016.9.26
+  - configparser==3.5.0
+  - cycler==0.10.0
+  - cython==0.24.1
+  - entrypoints==0.2.2
+  - funcsigs==1.0.2
+  - functools32==3.2.3.post2
+  - h5py==2.6.0
+  - ipykernel==4.5.0
+  - ipython-genutils==0.1.0
+  - ipywidgets==5.2.2
+  - jinja2==2.8
+  - joblib==0.10.2
+  - jsonschema==2.5.1
+  - jupyter==1.0.0
+  - jupyter-client==4.4.0
+  - jupyter-console==5.0.0
+  - jupyter-core==4.2.0
+  - keras==1.1.0
+  - librosa==0.4.3
+  - markupsafe==0.23
+  - matplotlib==1.5.3
+  - mistune==0.7.3
+  - mock==2.0.0
+  - nbconvert==4.2.0
+  - nbformat==4.1.0
+  - notebook==4.2.3
+  - numpy==1.11.2
+  - pbr==1.10.0
+  - prompt-toolkit==1.0.3
+  - protobuf==3.0.0
+  - pyparsing==2.1.10
+  - python-dateutil==2.5.3
+  - pytz==2016.7
+  - pyyaml==3.12
+  - pyzmq==16.0.0
+  - qtconsole==4.2.1
+  - resampy==0.1.4
+  - scikit-learn==0.18
+  - scipy==0.18.1
+  - singledispatch==3.4.0.3
+  - tensorflow==0.10.0rc0
+  - terminado==0.6
+  - theano==0.8.2
+  - tornado==4.4.2
+  - widgetsnbextension==1.2.6
+
+
